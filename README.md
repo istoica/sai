@@ -1,31 +1,63 @@
 # sai
 Scratchpad for AI driven projects
 
-## Simple Sorting Program
+## Rust Sorting Program
 
-A Python-based sorting program that sorts numbers using efficient algorithms.
+This project now includes a Rust version of the sorting program from `sort.py`.
 
-### Usage
+## Files
 
-**Sort numbers from command line:**
+- `Cargo.toml`: Rust project configuration
+- `src/main.rs`: Rust implementation of the sorter
+- `sort.py`: original Python version (kept for reference)
+
+## 1. Install Rust (first-time setup)
+
+On macOS/Linux:
+
 ```bash
-python3 sort.py 5 2 8 1 9 3
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-**Sort numbers from standard input:**
+Then reload your shell:
+
 ```bash
-echo "10 5 3 7 1" | python3 sort.py
+source "$HOME/.cargo/env"
 ```
 
-Or interactively:
+Confirm it worked:
+
 ```bash
-python3 sort.py
-# Then type numbers separated by spaces and press Ctrl+D
+cargo --version
+rustc --version
 ```
 
-### Features
+## 2. Run the Rust program
+
+From this project directory:
+
+### Sort numbers from command line
+
+```bash
+cargo run -- 5 2 8 1 9 3
+```
+
+### Sort numbers from standard input
+
+```bash
+echo "10 5 3 7 1" | cargo run
+```
+
+### Interactive mode
+
+```bash
+cargo run
+# Then type numbers separated by spaces/newlines and press Ctrl+D
+```
+
+## Features
 
 - Supports integers and floating-point numbers
 - Supports negative numbers
-- Uses quicksort algorithm for efficient sorting
+- Uses quicksort algorithm
 - Accepts input via command line arguments or standard input
